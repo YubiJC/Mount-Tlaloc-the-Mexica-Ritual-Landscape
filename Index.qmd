@@ -13,16 +13,15 @@ library(leaflet)
 library(sf)
 library(gpx)
 
-# 1. DATA PREPARATION
-# This loads your GPX and creates the trail line
+# 1. DATA PREP
+
 hike_raw <- gpx::read_gpx("mt.tlaloc.gpx")
 hike_df <- hike_raw$tracks[[1]]
 hike_df <- hike_df[complete.cases(hike_df[, c("Longitude", "Latitude")]), ]
 hike_sf <- st_as_sf(hike_df, coords = c("Longitude", "Latitude"), crs = 4326)
 hike_coords <- as.data.frame(st_coordinates(hike_sf))
 
-# 2. DEFINING THE FOUR ARCHIVAL POINTS
-# Hard-coded with your specific GPS coordinates for consistency
+# 2. FOUR ARCHIVAL POINTS
 poi_data <- data.frame(
   name = c("Base: Río Frío", 
            "Transit Zone (9,675 ft)", 
@@ -31,12 +30,12 @@ poi_data <- data.frame(
   elev = c("2,980m", "2,949m", "3,652m", "4,120m"),
   lat  = c(19.3533, 19.36291, 19.38932, 19.412),
   lng  = c(-98.6631, -98.67416, -98.70868, -98.712),
-  # Links to your corresponding Quarto documents
+ 
   file = c("index.html", "lower_ascent.html", "upper_ascent.html", "summit.html"),
   color = c("forestgreen", "cadetblue", "purple", "gold")
 )
 
-# 3. GENERATE THE INTERACTIVE MAP
+# 3.  INTERACTIVE MAP
 m <- leaflet() %>%
   addProviderTiles(providers$Esri.WorldTopoMap) %>%
   
@@ -69,7 +68,7 @@ m <- leaflet() %>%
     )
   )
 
-# 4. DISPLAY THE MAP
+# 4. DISPLAY MAP
 m
 ```
 
