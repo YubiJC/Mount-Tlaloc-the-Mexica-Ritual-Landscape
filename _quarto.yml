@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Mount Tlaloc: The Mexica Ritual Landscape"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Map
+      - href: base_camp.qmd
+        text: Base
+      - href: lower_ascent.qmd
+        text: Lower Zone
+      - href: upper_ascent.qmd
+        text: High Altitude
+      - href: summit.qmd
+        text: Summit
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true
