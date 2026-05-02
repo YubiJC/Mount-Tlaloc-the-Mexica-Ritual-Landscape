@@ -23,10 +23,10 @@ hike_coords <- as.data.frame(st_coordinates(hike_sf))
 
 # 2. FOUR ARCHIVAL POINTS
 poi_data <- data.frame(
-  name = c("Base: Río Frío", 
-           "Transit Zone (9,675 ft)", 
-           "High Altitude Zone (11,983 ft)", 
-           "The Tetzacualco Summit"),
+  name = c("Mountain Base", 
+           "Lower Zone (9,675 ft)", 
+           "Upper Zone (11,983 ft)", 
+           "Tetzacualo Summit"),
   elev = c("2,980m", "2,949m", "3,652m", "4,120m"),
   lat  = c(19.3533, 19.36291, 19.38932, 19.412),
   lng  = c(-98.6631, -98.67416, -98.70868, -98.712),
@@ -71,4 +71,3 @@ m <- leaflet() %>%
 # 4. DISPLAY MAP
 m
 ```
-
