@@ -71,3 +71,5 @@ m <- leaflet() %>%
 # 4. DISPLAY MAP
 m
 ```
+
+![Map of the ritual ascent (from the base to the summit)](tlaloc_hd_portfolio.png)
